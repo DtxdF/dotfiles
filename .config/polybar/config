@@ -1,0 +1,102 @@
+[bar/mybar]
+modules-left = bspwm
+modules-center = date
+modules-right = poweroff reboot quit
+width = 80%
+height = 30
+offset-y = 4
+offset-x = 10%
+radius = 8.100
+border-bottom-size = 1
+border-bottom-color = #ff963f
+font-0 = "Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular"
+font-1 = "Font Awesome 5 Brands,Font Awesome 5 Brands Regular:style=Regular"
+font-2 = "Font Awesome 5 Free,Font Awesome 5 Free Solid:style=Solid"
+font-3 = "DejaVu Sans Mono:style=Book"
+font-4 = "B&H LucidaBright:style=Regular"
+padding = 2
+background = #ab000000
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %Y/%m/%d
+time = %T
+date-alt = %A, %d %B %Y
+label = %date% %time%
+label-font = 4
+
+[module/bspwm]
+format = <label-state> <label-mode>
+label-monitor = %name%
+;label-dimmed-foreground = #7cff4b
+;label-dimmed-underline = #ffae18
+;label-dimmed-focused-background = #f00
+label-focused = %name%
+label-focused-foreground = #ffb430
+;label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+label-occupied = %name%
+label-occupied-foreground = 
+;label-occupied-underline = #555555
+label-urgent = %name%
+label-urgent-foreground = #ff5656
+;label-urgent-background = #ff4949
+label-urgent-underline = #9b0a20
+label-empty = %name%
+label-empty-foreground = #606a5d
+label-separator = |
+label-separator-padding = 2
+label-separator-foreground = #ffb52a
+
+type = internal/bspwm
+pin-workspaces = true
+inline-mode = true
+enable-click = true
+enable-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+
+;label-focused = %name%
+;label-focused-padding = 0
+;label-focused-margin = 0.5
+;label-focused-foreground = #ffffff
+;label-focused-underline = white
+
+label-unfocused = %name%
+label-unfocused-padding-left = 0
+;label-unfocused-margin = 0.5
+label-unfocused-underline = white
+
+label-visible-padding-right = 0
+;label-visible-margin = 0.5
+
+;label-urgent = %name%
+;label-urgent-padding = 0
+;label-urgent-margin = 0.5
+;label-urgent-foreground = #ffffff
+;label-urgent-underline = white
+
+[module/poweroff]
+type = custom/script
+click-left = sudo poweroff
+label = 
+exec = echo -n "poweroff"
+label-foreground = #ff5c5c
+label-margin-right = 2
+
+[module/reboot]
+type = custom/script
+click-left = sudo reboot
+label = 
+exec = echo -n "reboot"
+label-foreground = #16f80b
+label-margin-right = 2
+
+[module/quit]
+type = custom/script
+click-left = bspc quit
+label = 
+exec = echo -n "quit"
