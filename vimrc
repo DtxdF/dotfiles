@@ -1,5 +1,3 @@
-"Mis cosas
-
 set number
 set ignorecase
 set hlsearch
@@ -20,7 +18,3 @@ map + "+p
 syntax on
 set background=dark
 set showmode
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-colorscheme solarized
-set t_Co=256
